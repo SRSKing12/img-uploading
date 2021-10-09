@@ -12,6 +12,7 @@ class createUserForm(UserCreationForm):
     username=forms.CharField(label='Username',widget=forms.TextInput(attrs={'class':'form-control'}))
     password1=forms.CharField(label='Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
     password2=forms.CharField(label='Confirm Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    error_css_class = "error"
 
     class meta:
         model = User
@@ -35,6 +36,7 @@ class UserinfoForm(forms.ModelForm):
     image=forms.ImageField(label='Profile Image', required=False)
     # captcha=CaptchaField() --> Simple Text Captcha using django-simple-captcha
     captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+    error_css_class = "error"
 
     class Meta:
         model = Userinfo
