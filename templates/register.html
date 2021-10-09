@@ -10,6 +10,16 @@
 
     <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">  
 
+    <style>
+        .errorlist{
+            color: red;
+        }
+
+        .error input, .error select {
+            border: 2px solid red;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -28,7 +38,10 @@
         <hr>
         <input id="form-button" class="btn btn-success btn-block" type="submit" value="Create Profile">
         <br>
-            {{form.non_field_errors}}
+        {{form.non_field_errors}}
+
+        
+            
     </form>
 
     </div>
