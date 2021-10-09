@@ -137,8 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-RECAPTCHA_PUBLIC_KEY = '6LcjUbwcAAAAANpE84Bw7PKu8ccFNb9fmMbh5BRL'
-RECAPTCHA_PRIVATE_KEY = '6LcjUbwcAAAAALpsF0nQt5zrTPjXE8x_4ZCVxDYX'
+RECAPTCHA_PUBLIC_KEY = '6LfPVLwcAAAAAPJaYvuwLagGE92q8aWp_n689ZzR'
+RECAPTCHA_PRIVATE_KEY = '6LfPVLwcAAAAAE08TR3YBZk9uScEd2asI5gtNMyl'
 
 
 django_heroku.settings(locals())
