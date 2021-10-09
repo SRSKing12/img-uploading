@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usr',
     'django_cleanup.apps.CleanupConfig',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -135,5 +136,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+RECAPTCHA_PUBLIC_KEY = '6LcjUbwcAAAAANpE84Bw7PKu8ccFNb9fmMbh5BRL'
+RECAPTCHA_PRIVATE_KEY = '6LcjUbwcAAAAALpsF0nQt5zrTPjXE8x_4ZCVxDYX'
+
 
 django_heroku.settings(locals())
