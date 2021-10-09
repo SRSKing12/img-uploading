@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from .models import Userinfo
 from django import forms
 from django.db import transaction
+# from captcha.fields import CaptchaField --> For simple Text Captcha
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 class createUserForm(UserCreationForm):
     email = forms.EmailField(required=True,label="Email",widget=forms.EmailInput(attrs={'class':'form-control'}))
@@ -30,6 +33,8 @@ class createUserForm(UserCreationForm):
 class UserinfoForm(forms.ModelForm):
     full_Name=forms.CharField(label='Full Name',widget=forms.TextInput(attrs={'class':'form-control'}))
     image=forms.ImageField(label='Profile Image', required=False)
+    # captcha=CaptchaField() --> Simple Text Captcha using django-simple-captcha
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
     class Meta:
         model = Userinfo
