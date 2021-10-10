@@ -36,7 +36,8 @@ def sgin(request):
 def regst(request):
     if request.method == 'POST':
         form = createUserForm(request.POST)
-        profile_form = UserinfoForm(request.POST)
+        profile_form = UserinfoForm(request.POST, request.FILES)    
+            
         if form.is_valid() and profile_form.is_valid():
             user = form.save()
             profile = profile_form.save(commit=False)
