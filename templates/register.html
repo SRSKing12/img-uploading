@@ -30,7 +30,7 @@
 
    <hr>
 
-    <form method="POST" action="register" novalidate class="shadow p-5" style="border:2px solid grey">
+    <form method="POST" action="register" enctype="multipart/form-data" class="shadow p-5" style="border:2px solid grey">
         {% csrf_token %}
             <h3></h3>
             {{form.as_p}}
@@ -38,10 +38,8 @@
         <hr>
         <input id="form-button" class="btn btn-success btn-block" type="submit" value="Create Profile">
         <br>
-        {{form.non_field_errors}}
+        {{form.non_field_errors}}  
 
-        
-            
     </form>
 
     </div>
